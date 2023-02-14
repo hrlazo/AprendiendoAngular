@@ -1,0 +1,25 @@
+<article class="article-item" id="article-template">
+    <div class="image-wrap">
+        <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
+    </div>
+
+    <h2>{{indice+1}}-) {{pelicula.title}}</h2>
+    <span class="date">
+        Hace 5 minutos
+    </span>
+
+    <a href="#">Leer más</a>
+
+    <!-- <span class="year" [class.year-green] ="pelicula.year > 2017"
+                       [class.year-red] = "pelicula.year <= 2017">
+        {{pelicula.year}}
+    </span> -->
+       <span class="year" [ngClass]="{
+            'year-green' : pelicula.year > 2017,
+            'year-red' : pelicula.year <= 2017
+       }">
+        {{pelicula.year}}
+    </span> 
+    <div class="clearfix"></div>
+</article>
+<!--AÑADIR ARTICULOS VIA JS-->

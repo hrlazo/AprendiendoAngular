@@ -22,4 +22,10 @@ export class PaginaComponent {
       this.apellidos=params['apellidos']
     });
   }
+
+  redireccion(){
+    this._router.navigate(['/formulario']);
+    //redirecciona con los parametros.
+    //this._router.navigate(['/pagina-pruebas'], "Heriberto", "Lazo");
+  }
 }

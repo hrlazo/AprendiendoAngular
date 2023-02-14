@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-blog',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class BlogComponent {
 
+  public blogText= "Sección de Blog"
+  
+  constructor(){
+
+  }
+
+  ngOnInit(){
+
+  }
+
+  @Input() nombre:String = "";
 }

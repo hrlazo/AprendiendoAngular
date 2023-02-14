@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class SliderComponent {
 
-}
+  //Captura el dato enviado desde el componente padre (app.component)
+  @Input() nombre:String = "";
+  @Input() size:String = "";
+  constructor(){}
+
+  ngOnInit(){
+    
+  }
+  }
