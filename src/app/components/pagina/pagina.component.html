@@ -1,0 +1,10 @@
+<h2 class="subheader">Página Pruebas</h2>
+
+<div *ngIf="nombre && apellidos">
+    <h2>El nombre es: {{nombre}}</h2>
+    <h2>El apellido es: {{apellidos}}</h2>
+</div>
+
+<div *ngIf="!nombre && !apellidos">
+    <h2>No hay datos para mostrar</h2>
+</div>
