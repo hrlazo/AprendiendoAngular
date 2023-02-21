@@ -6,20 +6,27 @@
 
 <div class="center">
     <section id="content">
+
+        <div id="favorita" *ngIf="favorita">
+            <h2 class="subheader">Pelicula Favortia</h2>
+            {{favorita.title}}
+        </div>
+
         <h1 class="subheader">Lista de Peliculas</h1>
         <!-- <div *ngIf="peliculas.length <=3">
-    <p>Hay pocas peliculas</p>
-</div>
+            <p>Hay pocas peliculas</p>
+        </div>
 
-<div *ngIf="peliculas.length > 3">
-    <p>Hay muchas peliculas</p>
-</div> -->
+        <div *ngIf="peliculas.length > 3">
+            <p>Hay muchas peliculas</p>
+        </div> -->
 
         <div id="articles" *ngIf="peliculas">
             <div *ngFor="let pelicula of peliculas; let i = index;">
                 <app-pelicula
                     [pelicula] = "pelicula"
                     [indice] = "i"
+                    (marcarFavorita) = "mostrarFavorita($event)"
                 ></app-pelicula>
 
             </div>

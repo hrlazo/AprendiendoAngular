@@ -1,24 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Pelicula } from '../../models/pelicula';
+import { Pelicula } from '../../models/peliculas';
+import { PeliculasService } from 'src/app/services/peliculas.service';
+
 @Component({
   selector: 'app-peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers: [PeliculasService],
 })
-export class PeliculasComponent {
+export class PeliculasComponent implements OnInit {
 
   public peliculas: Array<Pelicula> = [];
+  public favorita!: Pelicula;
 
-  constructor(){
-    this.peliculas = [
-      new Pelicula("Spiderman 3", 2016,'https://images8.alphacoders.com/100/1003220.png'), 
-      new Pelicula( "Vengadores", 2017, 'https://images.alphacoders.com/457/457871.jpg'),
-      new Pelicula("Puss in Boots", 2019,'https://images8.alphacoders.com/129/1297243.png'),
-      new Pelicula("Puss in Boots", 2020,'https://images8.alphacoders.com/129/1297243.png')
-    ];
+  constructor(
+    private _peliculaService: PeliculasService
+  ){
+    this.peliculas = this._peliculaService.getPeliculas();
   }
 
   ngOnInit(){
     console.log(this.peliculas)
+    console.log(this._peliculaService.holaMundo())
+  }
+
+  mostrarFavorita(event:{pelicula:Pelicula}){
+    console.log(event);
+    this.favorita = event.pelicula;
   }
 }

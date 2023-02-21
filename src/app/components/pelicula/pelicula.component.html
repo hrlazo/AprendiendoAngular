@@ -9,6 +9,7 @@
     </span>
 
     <a href="#">Leer más</a>
+    <button (click)="seleccionar($event, pelicula)">Seleccionar como Favorita</button>
 
     <!-- <span class="year" [class.year-green] ="pelicula.year > 2017"
                        [class.year-red] = "pelicula.year <= 2017">
@@ -20,6 +21,8 @@
        }">
         {{pelicula.year}}
     </span> 
+
+  
     <div class="clearfix"></div>
 </article>
 <!--AÑADIR ARTICULOS VIA JS-->
